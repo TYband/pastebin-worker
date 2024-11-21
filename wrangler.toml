@@ -1,12 +1,12 @@
 name = "pb"
 compatibility_date = "2023-01-28"
-compatibility_flags = [ "nodejs_compat" ]
+compatibility_flags = ["nodejs_compat"]
 
 workers_dev = false
 main = "src/index.js"
 
 rules = [
-  { type = "Text", globs = [ "*/frontend/**", "*/doc/**" ], fallthrough = true }
+  { type = "Text", globs = ["*/frontend/**", "*/doc/**"], fallthrough = true }
 ]
 
 #----------------------------------------
@@ -15,31 +15,31 @@ rules = [
 
 [[routes]]
 # Refer to https://developers.cloudflare.com/workers/wrangler/configuration/#routes
-pattern = "shz.al"
+pattern = "shz.al/*"  # Match all subdomains of shz.al
 custom_domain = true
 
 [[kv_namespaces]]
-binding = "PB"  # do not touch this
-id = "cc398e983a234aa19de5ea6af571a483"  # id of your KV namespace
+binding = "PB"  # Do not modify this
+id = "cc398e983a234aa19de5ea6af571a483"  # Your KV namespace ID (already correct)
 
 [vars]
-# must be consistent with your routes
-BASE_URL = "https://shz.al"
+# Must be consistent with your routes
+BASE_URL = "https://shz.al"  # Base URL for your pastebin
 
-# url to repo, displayed in the index page
+# URL to the repo, displayed on the index page
 REPO = "https://github.com/SharzyL/pastebin-worker"
 
-# url to the favicon
+# URL to the favicon
 FAVICON = "https://sharzy.in/favicon-32x32.png"
 
-# the name displayed in TOS
+# The name displayed in Terms of Service (TOS)
 TOS_MAINTAINER = "Sharzy"
 
-# the email displayed in TOS
+# The email displayed in TOS
 TOS_MAIL = "pb@shz.al"
 
-# Cache-Control max-age for static pages
-CACHE_STATIC_PAGE_AGE = 7200
+# Cache-Control max-age for static pages (in seconds)
+CACHE_STATIC_PAGE_AGE = 7200  # 2 hours
 
-# Cache-Control max-age for static pages
-CACHE_PASTE_AGE = 600
+# Cache-Control max-age for paste content (in seconds)
+CACHE_PASTE_AGE = 600  # 10 minutes
