@@ -15,28 +15,28 @@ rules = [
 
 [[routes]]
 # Refer to https://developers.cloudflare.com/workers/wrangler/configuration/#routes
-pattern = "shz.al/*"  # Match all subdomains of shz.al
+pattern = "pb.ajaxm.com/*"  # Match all subdomains of shz.al
 custom_domain = true
 
 [[kv_namespaces]]
 binding = "PB"  # Do not modify this
-id = "cc398e983a234aa19de5ea6af571a483"  # Your KV namespace ID (already correct)
+id = "867f56b44da54d23b4213f0d12d58836"  # Your KV namespace ID (already correct)
 
 [vars]
 # Must be consistent with your routes
-BASE_URL = "https://shz.al"  # Base URL for your pastebin
+BASE_URL = "https://pb.ajaxm.com"  # Base URL for your pastebin
 
 # URL to the repo, displayed on the index page
-REPO = "https://github.com/SharzyL/pastebin-worker"
+REPO = "https://github.com/TYband/pastebin-worker"
 
 # URL to the favicon
 FAVICON = "https://sharzy.in/favicon-32x32.png"
 
 # The name displayed in Terms of Service (TOS)
-TOS_MAINTAINER = "Sharzy"
+TOS_MAINTAINER = "AJAXM"
 
 # The email displayed in TOS
-TOS_MAIL = "pb@shz.al"
+TOS_MAIL = "admin@AJAXM.com"
 
 # Cache-Control max-age for static pages (in seconds)
 CACHE_STATIC_PAGE_AGE = 7200  # 2 hours
